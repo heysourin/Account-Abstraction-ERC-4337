@@ -1,0 +1,13 @@
+1. Need of Account abstraction
+    
+
+
+## Topics
+- What is aa?
+- history 
+- benefits
+- sdks,tools
+- safe in gen
+- dapp, project, future,
+
+
