@@ -1,11 +1,49 @@
 1. Need of Account abstraction
+    a. Custody: i. on your own: chance of losing or hacked
+                ii. to give it to the another person, eg: thirdparty like FTX
     
+    There are 2 types of accounts:
+        a. EOA: Controlled by a private key. EOA can not contain EVM code.
+        b. CA: contract contains evm code. contract is controlled by evm code.
+
+    Problems with EOA:
+        a. Not recoverable once you lose the private key
+        b. Can be used for multiple purposes and have no control over funds
+        c. There is no way to reverse a wrong transaction, users can not make a mistake.
+        3. ECDSA algorithm is not quantum proof: means quantum computers can crack the algorithm.
+
+    Koramangala Effect:
+        The users really dont have any reason to come to use our DAPP as it is not very hustlefree path, utill there is any financial sense.
+
+2. What is aa?
+    Account abstraction means every account is a smart contract that can contain logic and implement flow.
+        eg: You can write your own logic for your EOA. For example you want to give your wife ownership of your account
+EIPs:
+    EIP-86 can be said to be the first EIP (Ethereum Improvement Proposal) aimed at accountabstraction. After an initial proposal to prepare a security abstraction, the EIP-86 proposed implementing changes that would abstract out signature verification and the nonce scheme. These changes would allow users to create contract accounts that are not hard-coded to follow the traditional model but could be programmed to use any signature or nonce scheme in transaction processing.
+
+    EIP-2938 offers a restricted version of account abstraction. The proposal sought to allow smart contracts to function as EAs, allowing them to initiate transactions and pay for gas. In UseCas developers propose introducing a new type of transaction and two new opcodes, aiming to keep implementation simple and allow more complex features over time.
+
+    **But these EIPs were requiring major changes in the Ethereum protocol, which was not possible so, dicarded.
+
+3. 5 Major components of account abstraction: refer "../Diagram.png"
+    a. UserOperation: What user wants to do, like
+                    i. ABI encoded structure.
+                    ii. not allowed to access any info like blocktime, number, hash
+                    iii. only has access of data related to sender address.
+            ** UserOperation Mempool: after useroperation, it has to go to Mempool. Instead of going to traditional Mempool it goes to useroperation Mempool, which is a speciifc type of Mempool.
+
+
+    b. Bundler: A ethereum node that listens to the useroperation mempool, and bundles multiple user operation together.
+    c. EntryPoint
+    d. Aggregators
+    e. Paymasters
+
 
 
 ## Topics
 - What is aa?
-- history 
-- benefits
+- history, tech behind
+- benefits, use cases
 - sdks,tools
 - safe in gen
 - dapp, project, future,
