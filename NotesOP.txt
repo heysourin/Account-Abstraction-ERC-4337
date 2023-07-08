@@ -34,10 +34,16 @@ EIPs:
 
 
     b. Bundler: A ethereum node that listens to the useroperation mempool, and bundles multiple user operation together.
-    c. EntryPoint
-    d. Aggregators
-    e. Paymasters
 
+        **A Bundlers can be a block builder, but not all block builders on the network are required to be Bundlers.
+
+    c. EntryPoint Contract: Singleton contract that varifies and executes the bundle of UserOperation(comes as a single contract).
+        *Two phases of Entry Point:
+                        a. Verification Loop
+                        b. Execution Loop
+    d. Paymasters:(Optional feature) If someone wants to pay the gas for the transaction, paymaster comes into work
+
+    e. Aggregators: Aggregates many signatures into one
 
 
 ## Topics
